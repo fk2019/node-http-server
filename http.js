@@ -68,11 +68,11 @@ server.on('request',(request, response)=>{
        
     }
     else{
-        // response.statusCode=404;
-        // response.writeHead(404, {
-        //     'X-Powered-By':'Node'
-        // })
-        // response.end();
+        response.statusCode=404;
+        response.writeHead(404, {
+            'X-Powered-By':'Node'
+        })
+        response.end();
         fs.createReadStream('./index.html').pipe(response);
     }
   
